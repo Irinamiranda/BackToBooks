@@ -13,32 +13,31 @@ public class Main {
         ArrayList<Book> books = new ArrayList<>();
         Scanner s = new Scanner(System.in);
 
-        while(true) {
+        while (true) {
             System.out.println("what do you wish to do? Add the book/ check booklist/check authorlist/ exit");
-            if(s.nextLine().equalsIgnoreCase("add")){
+            String answer = s.nextLine();
+            if (answer.equalsIgnoreCase("add")) {
 
-                books.add(addBook());
+                addBook(authors, books);
 
-            }
-            else if(s.nextLine().equalsIgnoreCase("booklist")) {
+            } else if (answer.equalsIgnoreCase("booklist")) {
                 System.out.println("the book list");
-                for(Book eachBook: books){
+                for (Book eachBook : books) {
 
                     System.out.println(eachBook.toString());
 
                 }
 
-            }else if(s.nextLine().equalsIgnoreCase("authorlist")){
+            } else if (answer.equalsIgnoreCase("authorlist")) {
                 System.out.println("the author list");
-                for(Author eachAuthor: authors){
-                    System.out.println(eachAuthor);
-                    for(Book eachBook: books){
+                for (Author eachAuthor : authors) {
+                    System.out.println(eachAuthor.toString());
+                    for (Book eachBook : books) {
                         System.out.println(eachBook.toString());
                     }
                 }
 
-            }
-            else if(s.nextLine().equalsIgnoreCase("exit")){
+            } else if (answer.equalsIgnoreCase("exit")) {
                 break;
             }
         }
@@ -46,7 +45,7 @@ public class Main {
     }
 
     //create a method to add the book
-    public static Book addBook(){
+    public static Book addBook(ArrayList<Author> authors, ArrayList<Book> books) {
         Book newBook = new Book();
         //create a Scanner object to let user make an input
         Scanner s = new Scanner(System.in);
@@ -58,28 +57,26 @@ public class Main {
         System.out.println("Enter the isbn number");
         String isbn = s.nextLine();
         newBook.setIsbnNumber(isbn);
-        newBook.setAuthorBook(addAuthor());
+        newBook.setAuthorBook(addAuthor(authors));
+        books.add(newBook);
 
         return newBook;
     }
 
     //create a method to add author to book
-    public static Author addAuthor(ArrayList<Author> authors, ArrayList<Book> booksWrittenByAuthor) {
-
-
+    public static Author addAuthor(ArrayList<Author> authors) {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter the author");
         String author = s.nextLine();
         Author authorBook = null;
-        for(Author eachAuthor: authors) {
-            if (author.equalsIgnoreCase(eachAuthor.getEmailAddress())) {
+        for (Author eachAuthor : authors) {
+            if (author.equalsIgnoreCase(eachAuthor.getLastName())) {
                 authorBook = eachAuthor;
 
-                }
-                else {
+            } else {
                 break;
             }
-                }
-return authorBook;
+        }
+        return authorBook;
     }
 }
