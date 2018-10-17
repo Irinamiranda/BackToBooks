@@ -8,10 +8,10 @@ public class Author {
     private String lastName;
     private String emailAddress;
     private String phoneNumber;
-    private ArrayList<Book> booksWrittenByAuthor;
+//    private ArrayList<Book> booksWrittenByAuthor;
 
     public Author() {
-        this.booksWrittenByAuthor = new ArrayList<>();
+//        this.booksWrittenByAuthor = new ArrayList<>();
 
     }
 
@@ -20,7 +20,7 @@ public class Author {
         this.lastName = lastName;
         this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
-        this.booksWrittenByAuthor = new ArrayList<>();
+//        this.booksWrittenByAuthor = new ArrayList<>();
 
     }
 
@@ -55,9 +55,9 @@ public class Author {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    public ArrayList<Book> getBooksWrittenByAuthor() {
-        return booksWrittenByAuthor;
-    }
+//    public ArrayList<Book> getBooksWrittenByAuthor() {
+//        return booksWrittenByAuthor;
+//    }
 
 
     @Override

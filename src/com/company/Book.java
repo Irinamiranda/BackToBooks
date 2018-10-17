@@ -2,46 +2,46 @@ package com.company;
 
 public class Book {
 
-    private String titleBook;
-    private String isbnNumber;
-    private Author authorBook;
+    private String title;
+    private String isbn;
+    private Author author;
 
     public Book(){
 
     }
 
     public Book(String titleBook, String isbnNumber){
-        this.titleBook = titleBook;
-        this.isbnNumber = isbnNumber;
+        this.title = titleBook;
+        this.isbn = isbnNumber;
     }
 
-    public String getTitleBook() {
-        return titleBook;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitleBook(String titleBook) {
-        this.titleBook = titleBook;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getIsbnNumber() {
-        return isbnNumber;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setIsbnNumber(String isbnNumber) {
-        this.isbnNumber = isbnNumber;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
-    public Author getAuthorBook() {
-        return authorBook;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setAuthorBook(Author authorBook) {
-        this.authorBook = authorBook;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
 
     @Override
     public String toString() {
-        return "Book title " + getTitleBook() + " ISBN number " + getIsbnNumber() + " Book author " + getAuthorBook();
+        return "Book title " + getTitle() + " ISBN number " + getIsbn() + " Book author " + getAuthor();
     }
 }
